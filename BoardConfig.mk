@@ -42,6 +42,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 
 
 # Power
+TARGET_HAS_NO_WLAN_STATS := true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/enable_dt2w"
 
 # Properties
