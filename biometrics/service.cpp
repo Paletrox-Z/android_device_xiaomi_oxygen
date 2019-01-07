@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "biometrics.fingerprint@2.0-service"
+#define LOG_TAG "android.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
 
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
