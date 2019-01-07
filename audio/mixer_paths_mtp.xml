@@ -1615,6 +1615,20 @@
     <path name="unprocessed-mic">
         <path name="unprocessed-handset-mic" />
     </path>
+    
+      <path name="unprocessed-stereo-mic">
+        <path name="voice-rec-dmic-ef" />
+    </path>
+
+     <path name="unprocessed-three-mic">
+        <path name="three-mic" />
+    </path>
+
+     <path name="unprocessed-quad-mic">
+        <path name="quad-mic" />
+    </path>
+
+
 
     <path name="ADSP testfwk">
         <ctl name="MI2S_DL_HL Switch" value="1" />
