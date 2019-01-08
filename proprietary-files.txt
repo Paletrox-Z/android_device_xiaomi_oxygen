@@ -1015,6 +1015,13 @@ etc/camera/s5k5e8_ofilm_chromatix.xml:vendor/etc/camera/s5k5e8_ofilm_chromatix.x
 etc/camera/s5k5e8_qtech_chromatix.xml:vendor/etc/camera/s5k5e8_qtech_chromatix.xml
 etc/camera/s5k5e8_sunny_chromatix.xml:vendor/etc/camera/s5k5e8_sunny_chromatix.xml
 
+# Camera OIS
+vendor/lib/libois_lc898122.so
+
+# Camera - For symbol hax
+system/lib/libskia.so:vendor/lib/libskia.so
+system/lib64/libskia.so:vendor/lib64/libskia.so
+
 # Display calibration
 etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_ili9885_boe_fhd_video_mode_dsi_panel.xml
 etc/qdcm_calib_data_nt35532_fhd_video_mode_dsi_panel.xml:vendor/etc/qdcm_calib_data_nt35532_fhd_video_mode_dsi_panel.xml
