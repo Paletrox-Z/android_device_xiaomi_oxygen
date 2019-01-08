@@ -16,13 +16,17 @@
 #define LOG_NDEBUG 0
 #define LOG_TAG "FingerprintDaemonProxy"
 
+#include <android/security/IKeystoreService.h>
 #include <cutils/properties.h>
 #include <binder/IServiceManager.h>
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
 #include <hardware/hw_auth_token.h>
-#include <android/security/IKeystoreService.h>
+#include <keystore/keystore.h> // for error codes
+#include <keystore/keystore_return_types.h>
 #include <utils/Log.h>
+#include <utils/String16.h>
+
 
 #include "FingerprintDaemonProxy.h"
 
@@ -93,14 +97,14 @@ void FingerprintDaemonProxy::notifyKeystore(const uint8_t *auth_token, const siz
         // TODO: cache service?
         sp < IServiceManager > sm = defaultServiceManager();
         sp < IBinder > binder = sm->getService(String16("android.security.keystore"));
-        sp < security::IKeystoreService > service = interface_cast < security::IKeystoreService > (binder);
+        sp<security::IKeystoreService> service = interface_cast<security::IKeystoreService>(binder);
         if (service != NULL) {
-            int result =0;
-            std::vector<uint8_t> auth_token_vector(*auth_token, (*auth_token) + auth_token_length);
-            auto binder_result = service->addAuthToken(auth_token_vector, &result);
-             if (!binder_result.isOk() || !keystore::KeyStoreServiceReturnCode(result).isOk()) {
-                ALOGE("Falure sending auth token to KeyStore");
-             }
+            std::vector<uint8_t> auth_token_vector(auth_token, (auth_token) + auth_token_length);
+                int result = 0;
+                auto binder_result = service->addAuthToken(auth_token_vector, &result);
+                if (!binder_result.isOk() || !keystore::KeyStoreServiceReturnCode(result).isOk()) {
+             ALOGE("Failure sending auth token to KeyStore: %" PRId32, result);
+                            }
         } else {
             ALOGE("Unable to communicate with KeyStore");
         }
@@ -179,8 +183,8 @@ int64_t FingerprintDaemonProxy::openHal() {
     int err;
     const hw_module_t *hw_module = NULL;
 
-    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_module))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
+    if (0 != (err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, "goodix", &hw_module))) {
+        ALOGE("Can't open fingerprint goodix HW Module, error: %d", err);
         return 0;
     }
     if (NULL == hw_module) {

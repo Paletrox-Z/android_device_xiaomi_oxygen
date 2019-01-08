@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.biometrics.fingerprint@2.1-service.xiaomi_oxygen"
+#define LOG_TAG "biometrics.fingerprint@2.0-service"
 
 #include <binder/IPCThreadState.h>
 #include <binder/IServiceManager.h>
 #include <binder/PermissionCache.h>
 #include <binder/ProcessState.h>
 #include <utils/String16.h>
+#include <keystore/keystore.h> // for error codes
 
 #include <android/log.h>
 #include <hidl/HidlSupport.h>
