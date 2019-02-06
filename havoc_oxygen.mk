@@ -22,11 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/oxygen/device.mk)
 
 # Inherit some common aosp  stuff.
-$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
-PRODUCT_NAME := rr_oxygen
+PRODUCT_NAME := havoc_oxygen
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi Max 2
 PRODUCT_MANUFACTURER := Xiaomi
@@ -35,7 +35,11 @@ BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-#HAVOC_BUILD_TYPE := Official
+HAVOC_BUILD_TYPE := Official
+
+# Maintainer Prop
+PRODUCT_PROPERTIES_OVERRIDES += \
+    ro.havoc.maintainer="Rakesh Roshan"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
             PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F 8.11.8 release-keys"
