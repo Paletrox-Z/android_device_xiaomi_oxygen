@@ -50,6 +50,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl
 
+# QTI-Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.oxygen.rc \
