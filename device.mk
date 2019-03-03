@@ -24,7 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 $(call inherit-product, device/xiaomi/msm8953-common/msm8953.mk)
 
 # APN
-CUSTOM_APNS_FILE := $(LOCAL_PATH)/configs/apns-conf.xml
+DEFAULT_APNS_FILE := $(LOCAL_PATH)/configs/apns-conf.xml
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
