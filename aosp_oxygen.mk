@@ -46,14 +46,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=taimen \
-    PRIVATE_BUILD_DESC="taimen-user 9 PQ1A.190105.004 5148680 release-keys"
-
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ1A.190105.004/5148680:user/release-keys
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-#    PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F V10.2.1.0.NDDMIXM release-keys"
+    PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F V10.2.1.0.NDDMIXM release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-#BUILD_FINGERPRINT := "Xiaomi/oxygen/oxygen:7.1.1/NMF26F/V10.2.1.0.NDDMIXM:user/release-keys"
+BUILD_FINGERPRINT := "Xiaomi/oxygen/oxygen:7.1.1/NMF26F/V10.2.1.0.NDDMIXM:user/release-keys"
 
