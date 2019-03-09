@@ -46,8 +46,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_BRAND := google \
-    PRODUCT_MODEL := Pixel 2 XL \
+    PRODUCT_BRAND=google \
+    PRODUCT_MODEL="Pixel 2 XL" \
     PRIVATE_BUILD_DESC="taimen-user 9 PPR1.180610.009 4898911 release-keys"
 
 BUILD_FINGERPRINT := google/taimen/taimen:9/PPR1.180610.009/4898911:user/release-keys
