@@ -31,6 +31,8 @@ TARGET_INCLUDE_STOCK_ARCORE := true
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Allow Missing Dependencies
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := oxygen
@@ -46,15 +48,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_BRAND=google \
-    PRODUCT_MODEL="Pixel 2 XL" \
-    PRIVATE_BUILD_DESC="taimen-user 9 PPR1.180610.009 4898911 release-keys"
+    PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F V9.5.4.0.NDDMIFA release-keys"
 
-BUILD_FINGERPRINT := google/taimen/taimen:9/PPR1.180610.009/4898911:user/release-keys
-
-#PRODUCT_BUILD_PROP_OVERRIDES += \
-#    PRIVATE_BUILD_DESC="oxygen-user 7.1.1 NMF26F V10.2.1.0.NDDMIXM release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-#BUILD_FINGERPRINT := "Xiaomi/oxygen/oxygen:7.1.1/NMF26F/V10.2.1.0.NDDMIXM:user/release-keys"
-
+BUILD_FINGERPRINT := Xiaomi/oxygen/oxygen:7.1.1/NMF26F/V9.5.4.0.NDDMIFA:user/release-keys
