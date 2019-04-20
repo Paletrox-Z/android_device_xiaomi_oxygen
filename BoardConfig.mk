@@ -53,6 +53,8 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/enable_dt2w"
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
+# QTI-Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
 #BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
